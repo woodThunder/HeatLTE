@@ -1,0 +1,7 @@
+总布局图：index.html
+分布局图：
+	精图小区：area2.html
+	金宸国际公寓：area1.html
+		锅炉房：area1_boiler.html
+	农光里中社区：area.html
+设备报警：alarm.html

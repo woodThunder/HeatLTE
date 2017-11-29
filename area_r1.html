@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+  <meta name="renderer" content="webkit"/>
+  <title></title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="plugins/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="plugins/colorpicker/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/select2.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  
+  <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="common/css/bootstrap-datetimepicker.min.css"/>
+	<link rel="stylesheet" type="text/css" href="common/css/style.css"/>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<style>
+	*,ul,li{margin:0;padding:0;}
+	html{height:100%}
+	body{height:100%;margin:0px;padding:0px}
+	.nav{width: 100%;}
+	.btn-box-tool{font-size:14px;}
+	.map{position: relative;}
+	.map img{width: 100%; height: auto;}
+	.build{display: block;width: 28px; height: 40px; background: url(common/images/icons.png); background-size: 100% 100%; position: absolute; text-align: center; line-height: 26px; color: #fff; font-weight: bold;}
+	.build:link,.build:visited,.build:hover,.build:active{color:#fff;}
+	.build1{left:77%;top:48%;}
+	.build2{left:70%;top:24%;}
+	.build3{left:54%;top:35%;}
+	.build4{left:60%;top:54%;}
+	.build5{left:66%;top:47%;}
+	
+	.build7{left:52%;top:65%;}
+	.build8{left:47%;top:59%;}
+	
+	.build10{left:33%;top:59%;}
+	.build11{left:27%;top:54%;}
+	
+	.build14{left:26%;top:39%;}
+	.build15{left:35%;top:47%;}
+	.build16{left:43%;top:50%;}
+	.build17{left:47%;top:41%;}
+	.build18{left:40%;top:20%;}
+	.build19{left:50%;top:25%;}
+	.build20{left:63%;top:26%;}
+	.build21{left:55%;top:6%;}
+	
+	.build02{left:77%;top:41%;}
+	.build03{left:62%;top:36%;}
+	.con{position: absolute; overflow:hidden;background: #fff; left: 0; top: 0;}
+	.con ul li{ padding:1px 10px;}
+</style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <!--<span class="logo-mini"><b>智慧院线云平台</b></span>-->
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>合利能智慧供热云平台</b></span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#"><span class="header-time"></span></a>
+          </li>
+          <li>
+            <a href="#"><span class="header-tem">0</span>℃</a>
+          </li>
+          <li>
+            <a href="#"><span class="header-btn">退出</span></a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <!--<div class="pull-left image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>-->
+        <div class="info">
+          <p></p>
+          <a href="#"><i class="fa fa-circle text-green"></i> 在线</a>
+        </div>
+      </div>
+      
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <!--<li class="header">MAIN NAVIGATION</li>-->
+        <li class="treeview">
+          <a href="index.html">
+            <i class="fa fa-home"></i> <span>总布局图</span>
+          </a>
+        </li>
+        <li class="active treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>分布局图</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i>精图小区</a></li>
+            <li><a href="area1.html"><i class="fa fa-circle-o"></i>金宸国际公寓</a></li>
+            <li><a href="area.html"><i class="fa fa-circle-o"></i>农光里中社区</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="list.html">
+            <i class="fa fa-list"></i>
+            <span>数据列表</span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="history.html">
+            <i class="fa fa-table"></i>
+            <span>历史数据</span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="alarm.html">
+            <i class="fa fa-table"></i>
+            <span>报警列表</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+    	<div class="row">
+        <!-- Left col -->
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+            	
+							<div class="ele-count">
+                <button type="button" class="btn btn-box-tool active">区域图</button>
+                <button type="button" class="btn btn-box-tool">实时数据</button>
+                <button type="button" class="btn btn-box-tool">历史数据</button>
+                <button type="button" class="btn btn-box-tool">报警列表</button>
+              </div>
+              
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="tabs-content">
+                  	<div class="tabs">
+                  		<section class="map">
+									      <img src="common/images/map.png" />
+									      <a href="javascript:;" title="201号楼" ids="2035,2036" class="build build1">201</a>
+									      <a href="javascript:;" title="202号楼" ids="2037,2038" class="build build2">202</a>
+									      <a href="javascript:;" title="203号楼" class="build build3">203</a>
+									      <a href="javascript:;" title="204号楼" class="build build4">204</a>
+									      <a href="javascript:;" title="205号楼" class="build build5">205</a>
+									      
+									      <a href="javascript:;" title="207号楼" class="build build7">207</a>
+									      <a href="javascript:;" title="208号楼" class="build build8">208</a>
+									      
+									      <a href="javascript:;" title="210号楼" class="build build10">210</a>
+									      <a href="javascript:;" title="211号楼" class="build build11">211</a>
+									      
+									      <a href="javascript:;" title="214号楼" class="build build14">214</a>
+									      <a href="javascript:;" title="215号楼" class="build build15">215</a>
+									      <a href="javascript:;" title="216号楼" class="build build16">216</a>
+									      <a href="javascript:;" title="217号楼" class="build build17">217</a>
+									      <a href="javascript:;" title="218号楼" class="build build18">218</a>
+									      <a href="javascript:;" title="219号楼" class="build build19">219</a>
+									      <a href="javascript:;" title="220号楼" class="build build20">220</a>
+									      <a href="javascript:;" title="221号楼" class="build build21">221</a>
+									      <a href="javascript:;" title="甲202号楼" class="build build02">202</a>
+									      <a href="javascript:;" title="甲203号楼" class="build build03">203</a>
+									      <div class="con">
+									      	<ul></ul>
+									      </div>
+									    </section>
+                  	</div>
+                  	<div class="tabs" style="display: none;">
+                  		<section class="content">
+									      <div class="box box-default">
+									        <div class="box-body">
+									          <table id="example1" class="table table-bordered table-striped" style="width: 100%; ">
+									            <thead>
+									            <tr>
+									            	<th>编号</th>
+									            	<th>安装位置</th>
+									            	<!--<th>设备ID</th>-->
+									            	<th>温度</th>
+									              <!--<th>同步时间</th>-->
+									              <th>联系人</th>
+									              <th>电话</th>
+									            </tr>
+									            </thead>
+									          </table>
+									        </div>
+									      </div>
+									      <!-- /.box -->
+									    </section>
+                  	</div>
+                  	<div class="tabs" style="display: none;">
+                  		<section class="content history">
+												<!-- SELECT2 EXAMPLE -->
+												<div class="box box-default">
+													<div class="box-header with-border">
+														<div class="col-md-3">
+															<div class="form-group">
+																<label>开始时间:</label>
+							
+																<div class="input-group date">
+																	<div class="input-group-addon">
+																		<i class="fa fa-calendar"></i>
+																	</div>
+																	<input type="text" class="form-control pull-right" id="start">
+																</div>
+																<!-- /.input group -->
+															</div>
+															<!-- /.form group -->
+														</div>
+														<div class="col-md-3">
+															<div class="form-group">
+																<label>结束时间:</label>
+							
+																<div class="input-group date">
+																	<div class="input-group-addon">
+																		<i class="fa fa-calendar"></i>
+																	</div>
+																	<input type="text" class="form-control pull-right" id="end">
+																</div>
+																<!-- /.input group -->
+															</div>
+															<!-- /.form group -->
+														</div>
+														<div class="col-md-3">
+															<div class="form-group">
+																<label>设备列表:</label>
+																<select class="form-control select2" id="devid" style="width: 100%;">
+																	
+																</select>
+																<!--<input type="text" class="form-control pull-right" id="devid" value="111">-->
+															</div>
+															<!-- /.form group -->
+														</div>
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="la">数据</label>
+																<button type="button" class="btn btn-success margin-5" id="historydata_btn">查询</button>
+																<button type="button" class="btn btn-success margin-5" id="historylist_btn">分析</button>
+																<button type="button" class="btn btn-success margin-5" id="out_btn">导出</button>
+																<!-- /.input group -->
+															</div>
+															<!-- /.form group -->
+														</div>
+													</div>
+													<!-- /.box-header -->
+													<div class="box-body">
+														<table id="example2" class="table table-bordered table-striped" style="width: 100%;">
+															<thead>
+																<tr>
+																	<th>编号</th>
+										            	<th>设备名称</th>
+										            	<th>设备ID</th>
+										            	<th>温度</th>
+										              <th>同步时间</th>
+																</tr>
+															</thead>
+														</table>
+														<div id="fenxi">
+															<div class="row">
+																<div class="col-md-12">
+																	<div id="tem" style="height: 400px;"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<!-- /.box -->
+												</div>
+											</section>
+                  	</div>
+                  	<div class="tabs" style="display: none;">
+                  		<section class="content alarm">
+												<!-- SELECT2 EXAMPLE -->
+												<div class="box box-default">
+													<div class="box-header with-border">
+														<div class="col-md-3">
+															<div class="form-group">
+																<label>开始时间:</label>
+							
+																<div class="input-group date">
+																	<div class="input-group-addon">
+																		<i class="fa fa-calendar"></i>
+																	</div>
+																	<input type="text" class="form-control pull-right" id="start1">
+																</div>
+																<!-- /.input group -->
+															</div>
+															<!-- /.form group -->
+														</div>
+														<div class="col-md-3">
+															<div class="form-group">
+																<label>结束时间:</label>
+							
+																<div class="input-group date">
+																	<div class="input-group-addon">
+																		<i class="fa fa-calendar"></i>
+																	</div>
+																	<input type="text" class="form-control pull-right" id="end1">
+																</div>
+																<!-- /.input group -->
+															</div>
+															<!-- /.form group -->
+														</div>
+														<div class="col-md-3">
+															<div class="form-group">
+																<label>设备列表:</label>
+																<select class="form-control select2" id="devid1" style="width: 100%;">
+																	<option value="109" type="2">全部</option>
+																	
+																	
+																</select>
+																<!--<input type="text" class="form-control pull-right" id="devid" value="111">-->
+															</div>
+															<!-- /.form group -->
+														</div>
+														<div class="col-md-3">
+															<div class="form-group">
+																<label class="la">数据</label>
+																<button type="button" class="btn btn-success margin-5" id="alarm_btn">查询</button>
+																<!--<button type="button" class="btn btn-success margin-5" id="historylist_btn">分析</button>
+																<button type="button" class="btn btn-success margin-5" id="out_btn">导出</button>-->
+																<!-- /.input group -->
+															</div>
+															<!-- /.form group -->
+														</div>
+													</div>
+													<!-- /.box-header -->
+													<div class="box-body" style="padding: 10px 15px;">
+														<table id="example3" class="table table-bordered table-striped" style="width: 100%;">
+															<thead>
+																<tr>
+																	<th>编号</th>
+										            	<th>设备名称</th>
+										            	<th>设备ID</th>
+										            	<th>设定温度</th>
+										            	<th>报警温度</th>
+									                <th>报警时间</th>
+									                <th>恢复时间</th>
+									                <th>报警信息</th>
+																</tr>
+															</thead>
+														</table>
+														<div id="fenxi1" style="display: none;">
+															<div class="row">
+																<div class="col-md-12">
+																	此时间段内没有报警信息。
+																</div>
+															</div>
+														</div>
+													</div>
+													<!-- /.box -->
+							
+											</section>
+											<!-- /.content -->
+                  	</div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.row -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <strong>蔚蓝数据 Azure City (Beijing) Technologies Inc.</strong>
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/input-mask/jquery.inputmask.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
+<!--datatables-->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+<!-- date-range-picker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap datepicker -->
+<!--<script src="plugins/datepicker/bootstrap-datepicker.js"></script>-->
+<script src="common/js/bootstrap-datetimepicker.min.js" charset = "UTF-8"></script>
+<script src="common/js/bootstrap-datetimepicker.zh-CN.js" charset = "UTF-8"></script>
+<!-- bootstrap color picker -->
+<script src="plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+<!-- bootstrap time picker -->
+<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<!-- SlimScroll 1.3.0 -->
+<!--<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>-->
+<!-- iCheck 1.0.1 -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<!-- FastClick -->
+<script src="plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/app.min.js"></script>
+
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+<script src="common/js/shine.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script src="common/js/jquery.cookie.js" type="text/javascript"></script>
+<script src="common/js/common.js" charset = "UTF-8"></script>
+<script>
+var arr = [];
+for(var i=0;i<16;i++){
+	arr.push(i+2035);
+}
+//设备id列表
+var str = arr.join(',');
+//实时数据列表
+$.ajax({
+	//要用post方式
+	type: "post",
+	//方法所在页面和方法名
+	url: 'http://123.56.156.91:8089/getBzRecordList?params={%22deviceIds%22:%22' + str + '%22}',
+	dataType: "jsonp",
+	jsonp: "jsonpCallback",
+	success: function (data) {
+		//console.log(data);
+    if(data.data) {
+	    var datas = data.data;
+	    console.log(datas);
+	    var a = [];
+	    for (var i = 0; i < datas.length; i++) {
+	        var tem = datas[i].bzRecord.data.split(',')[0] + '℃';
+	        var devname = datas[i].deviceInfo.deviceName;
+	        var id = datas[i].bzRecord.devId;
+	        var sync = datas[i].bzRecord.syncTime;
+	        a[i] = {
+	            'num': i+1,
+	            'name': devname,
+	            //'id': id,
+	            'tem': tem,
+	            //'deviceTime': sync
+	            'people':'徐卫国',
+	            'number':'15223772896'
+	        }
+	    }
+			$('#example1').DataTable({
+	      "paging": true,//是否显示分页,默认为true
+	      "lengthChange": false,//是否显示数据显示条数,默认为true,当数据小于每页的条数时也不显示
+	      "searching": false,//是否显示搜索,默认为true
+	      "ordering": false,//是否显示列的排序，默认为true
+	      "info": true,//是否显示表的信息，默认为true
+	      "autoWidth": true,//是否启动计算列宽
+//	      "scrollX": "100%",
+//	      "scrollCollapse": true,
+	      //"scrollXInner": "100%",
+	      //"retrieve":true,
+	      "destroy":true,
+	      "language": {
+		        lengthMenu: '<select class="form-control input-xsmall">' + '<option value="1">1</option>' + '<option value="10">10</option>' + '<option value="20">20</option>' + '<option value="30">30</option>' + '<option value="40">40</option>' + '<option value="50">50</option>' + '</select>条记录',//左上角的分页大小显示。
+		        search: '<span class="label label-success">搜索：</span>',//右上角的搜索文本，可以写html标签
+		
+		        paginate: {//分页的样式内容。
+		            previous: "上一页",
+		            next: "下一页",
+		            first: "第一页",
+		            last: "最后"
+		        },
+		        zeroRecords: "没有内容",//table tbody内容为空时，tbody的内容。
+		        //下面三者构成了总体的左下角的内容。
+		        info: "总共_PAGES_ 页_TOTAL_ 条，显示第_START_ 到第 _END_ ",//，筛选之后得到 _TOTAL_ 条，初始_MAX_ 条 ,左下角的信息显示，大写的词为关键字。
+		        infoEmpty: "0条记录",//筛选为空时左下角的显示。
+		        infoFiltered: ""//筛选之后的左下角筛选提示，
+		    },
+		    "data": a,
+		    "columns": [
+		    	{"data": "num"},
+		    	{"data": "name"},
+		    	//{"data": "id"},
+		    	{"data": "tem"},
+		    	//{"data": "deviceTime"}
+		    	{"data": "people"},
+		    	{"data": "number"},
+		    ]
+	    });
+			//$.fn.dataTable().fnReloadAjax();
+    }
+    else{
+	    alert('数据错误！');
+	  }
+	},
+	error: function (err) {
+	    //alert(err);
+	}
+});	
+
+var second = new Date().getTime();
+//var _startTime = formatDateTime(new Date(second-(10*24*60*60*1000)));
+var now = formatDateTime(new Date());
+//动态设置最终时间
+var theDate = new Date();
+var _hour = theDate.getHours();
+var _minute = theDate.getMinutes();
+var _second = theDate.getSeconds();
+var _year = theDate.getFullYear();
+var _month = theDate.getMonth();
+var _date = theDate.getDate();
+if(_hour < 10) {_hour = "0" + _hour}
+if(_minute < 10) {_minute = "0" + _minute}
+if(_second < 10) {_second = "0" + _second}
+_month = _month +1;
+if(_month < 10) {_month = "0" + _month;}
+if(_date < 10) {_date = "0" + _date}
+
+//默认今天2017-11-02
+var _end = _year + "-" + _month + "-" + _date;
+
+$(function() {
+
+	var id = GetQueryString("id");
+	$("#devid option[value='" + id + "']").attr("selected", "selected");
+	
+	//history
+	$('#start').datetimepicker({
+		autoclose: true,
+		format: 'yyyy-mm-dd',
+		todayHighlight: true,
+		language: 'zh-CN',
+		minView: 2
+	});
+	$('#start').val(_end);
+	$('#end').datetimepicker({
+		autoclose: true,
+		format: 'yyyy-mm-dd',
+		todayHighlight: true,
+		language: 'zh-CN',
+		minView: 2
+	});
+	$('#end').val(_end);
+	$("#fenxi").hide();
+	
+	//alarm
+	$('#start1').datetimepicker({
+		autoclose: true,
+		format: 'yyyy-mm-dd',
+		todayHighlight: true,
+		language: 'zh-CN',
+		minView: 2
+	});
+	$('#start1').val(_end);
+	$('#end1').datetimepicker({
+		autoclose: true,
+		format: 'yyyy-mm-dd',
+		todayHighlight: true,
+		language: 'zh-CN',
+		minView: 2
+	});
+	$('#end1').val(_end);
+	$("#fenxi1").hide();
+	
+	//通过设备ID列表查询设备名称列表
+	$.ajax({
+		//要用post方式
+		type: "post",
+		//方法所在页面和方法名
+		url: 'http://123.56.156.91:8089/getBzRecordList?params={%22deviceIds%22:%22' + str + '%22}',
+		dataType: "jsonp",
+		jsonp: "jsonpCallback",
+		success: function (data) {
+			//console.log(data);
+	    if(data.data) {
+		    var datas = data.data;
+		    console.log(datas);
+		    for (var i = 0; i < datas.length; i++) {
+	        var tem = datas[i].bzRecord.data.split(',')[0] + '℃';
+	        var devname = datas[i].deviceInfo.deviceName;
+	        var id = datas[i].bzRecord.devId;
+	        var sync = datas[i].bzRecord.syncTime;
+	        var str = "<option value='"+ id +"' type='1'>"+ devname +"</option>";
+	        $("#devid").append(str);
+	        $("#devid1").append(str);
+		    }	
+		    
+			  //获取开始时间
+				var _startTime = $("#start").val();
+				_startTime = _startTime + " 00:00:00";
+				
+				//获取结束时间
+				var _endTime = $("#end").val();
+				_endTime = _endTime + " 23:59:59";
+				
+				//获取设备ID和设备名称
+				var _devid = $("#devid").val();
+				var _devname = $("#devid").find("option:selected").text();
+				
+				// 历史数据方法调用
+				devicehistorysdata(_devid, _startTime, _endTime, _devname);
+				
+				//获取开始时间
+				var _startTime1 = $("#start1").val();
+				_startTime1 = _startTime1 + " 00:00:00";
+				//获取结束时间
+				var _endTime1 = $("#end1").val();
+				_endTime1 = _endTime1 + " 23:59:59";
+				//获取设备ID和设备名称
+				var _devid1 = $("#devid1").val();
+				var _devname1 = $("#devid1").find("option:selected").text();
+				
+				var _type1 = $("#devid1").find("option:selected").attr("type");
+				//console.log(_type);
+				
+				//报警列表
+				alarmlist(_devid1, _startTime1, _endTime1, _devname1, _type1);
+	    }
+	    else{
+		    alert('数据错误！');
+	    }
+		},
+		error: function (err) {
+		    //alert(err);
+		}
+	});
+	
+	
+	
+	//数据按钮
+	$("#historydata_btn").click(function() {
+
+		var _startTime = $("#start").val();
+		_startTime = _startTime + " 00:00:00";
+		
+		var _endTime = $("#end").val();
+		_endTime = _endTime + " 23:59:59";
+		
+		var _devid = $("#devid").val();
+		var _devname = $("#devid").find("option:selected").text();
+		
+		if(_startTime == "" || _endTime == "") {
+			alert('开始日期或结束日期不能为空！');
+			return;
+		}
+		
+		if(_endTime < _startTime) {
+			alert('结束日期不能小于开始日期！');
+			return;
+		}
+//						console.log(_devid, _startTime, _endTime, _devname);
+
+		$("#fenxi").hide();
+		$("#example2_wrapper").show();
+		devicehistorysdata(_devid, _startTime, _endTime, _devname);
+	})
+
+	//分析按钮
+	$("#historylist_btn").click(function() {
+		
+		var _startTime = $("#start").val();
+		_startTime = _startTime + " 00:00:00";
+		
+		var _endTime = $("#end").val();
+		_endTime = _endTime + " 23:59:59";
+		
+		var _devid = $("#devid").val();
+		var _devname = $("#devid").find("option:selected").text();
+		
+		if(_startTime == "" || _endTime == "") {
+			alert('开始日期或结束日期不能为空！');
+			return;
+		}
+		
+		if(_endTime < _startTime) {
+			alert('结束日期不能小于开始日期！');
+			return;
+		}
+
+		$("#fenxi").show();
+		$("#example2_wrapper").hide();
+		devicehistoryslist(_devid, _startTime, _endTime);
+	})
+	
+	//导出按钮
+	$("#out_btn").click(function() {
+		
+		var _startTime = $("#start").val();
+		_startTime = _startTime + " 00:00:00";
+		
+		var _endTime = $("#end").val();
+		_endTime = _endTime + " 23:59:59";
+		
+		var _devid = $("#devid").val();
+		var _devname = $("#devid").find("option:selected").text();
+		
+		if(_startTime == "" || _endTime == "") {
+			alert('开始日期或结束日期不能为空！');
+			return;
+		}
+		
+		if(_endTime < _startTime) {
+			alert('结束日期不能小于开始日期！');
+			return;
+		}
+		
+		//console.log(_devid, _startTime, _endTime, _devname);
+		window.open('http://123.56.156.91:8082/WlcsInterface/getMonthBzRecordList?params={%22deviceId%22:' + _devid + ',%22beginTime%22:%22' + _startTime + '%22,%22endTime%22:%22' + _endTime + '%22,%22type%22:%224%22,%22begin%22:0,%22end%22:1}');
+	})
+
+	//数据按钮
+	$("#alarm_btn").click(function() {
+
+		var _startTime = $("#start1").val();
+		_startTime = _startTime + " 00:00:00";
+		
+		var _endTime = $("#end1").val();
+		_endTime = _endTime + " 23:59:59";
+		
+		var _devid = $("#devid1").val();
+		var _devname = $("#devid1").find("option:selected").text();
+		var _type = $("#devid1").find("option:selected").attr("type");
+		
+		if(_startTime == "" || _endTime == "") {
+			alert('开始日期或结束日期不能为空！');
+			return;
+		}
+		
+		if(_endTime < _startTime) {
+			alert('结束日期不能小于开始日期！');
+			return;
+		}
+//						console.log(_devid, _startTime, _endTime, _devname);
+
+		$("#fenxi1").hide();
+		$("#example3_wrapper").show();
+		alarmlist(_devid, _startTime, _endTime, _devname, _type);
+	})
+});
+
+//历史数据曲线
+function devicehistoryslist(devid, startdate, enddate) {
+	var _url = 'http://123.56.156.91:8081/AppInterface/queryAllBzRecord?params={%22deviceId%22:' + devid + ',%22beginTime%22:%22' + startdate + '%22,%22endTime%22:%22' + enddate + '%22}';
+	//加载历史数据列表
+	$.ajax({
+		//要用post方式
+		type: "post",
+		//方法所在页面和方法名
+		url: _url,
+		//contentType: "application/json; charset=utf-8",
+		dataType: "jsonp",
+		jsonp: "jsonpCallback",
+		success: function(data) {
+			console.log(data);
+			if(data.data) {
+				var datas = data.data.reverse();
+
+				var xlist = new Array();
+
+				var ary0 = new Array();
+
+				for(var i = 0; i < datas.length; i++) {
+					var datasAry = datas[i].data.split(",");
+					xlist[i] = datas[i].syncTime;
+					ary0[i] = datasAry[0];
+				};
+				tem("tem", xlist, ary0, '温度', '#ff4683', '温度（℃）');
+			} else {
+				alert('此时间段没有数据');
+			}
+		},
+		error: function(err) {
+			alert('系统连接错误，请重试！');
+		}
+	});
+}
+
+//温度曲线
+function tem(id, xlist, data, name, color, lable) {
+	var myChart = echarts.init(document.getElementById(id), "shine");
+	option = {
+		grid: {
+			top: 30,
+			bottom: 80,
+			right: 25,
+			left: 35
+		},
+		tooltip: {
+			trigger: 'axis'
+		},
+		legend: {
+			left: 'right',
+			data: [name],
+			inactiveColor: '#999',
+			//selectedMode: 'single',
+			//      orient: 'vertical',
+			//      width: 150,
+			//      top: 50,
+			//      borderWidth: 2,
+			//      borderColor: 'blue',
+			textStyle: {
+				color: '#000'
+			}
+		},
+		dataZoom: [{
+			show: true,
+			realtime: true,
+			start: 0,
+			end: 100,
+			handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z'
+		}],
+		xAxis: {
+			type: 'category',
+			boundaryGap: false,
+			data: xlist.map(function(str) {
+				return str.replace(' ', '\n')
+			}),
+		},
+		yAxis: {
+			type: 'value',
+			name: lable,
+			axisLabel: {
+				formatter: '{value}'
+			}
+		},
+		series: [{
+				name: name,
+				type: 'line',
+				data: data,
+				itemStyle: {
+					normal: {
+						color: color
+					}
+				},
+				lineStyle: {
+					normal: {
+						width: 1
+					}
+				},
+				areaStyle: {
+					normal: {
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+							offset: 0,
+							color: 'rgba(255, 70, 131, 0.5)'
+						}, {
+							offset: 0.8,
+							color: 'rgba(255, 70, 131, 0.1)'
+						}], false),
+						shadowColor: 'rgba(255, 70, 131, 0)',
+						shadowBlur: 10
+					}
+				}
+			}
+		]
+	};
+	myChart.setOption(option);
+}
+
+//历史数据列表
+function devicehistorysdata(devid, startdate, enddate, devname) {
+
+	$.ajax({
+		//要用post方式
+		type: "post",
+		//方法所在页面和方法名
+		url: 'http://123.56.156.91:8081/AppInterface/queryAllBzRecord?params={%22deviceId%22:' + devid + ',%22beginTime%22:%22' + startdate + '%22,%22endTime%22:%22' + enddate + '%22}',
+		dataType: "jsonp",
+		jsonp: "jsonpCallback",
+		success: function(data) {
+			console.log(data);
+			if(data.data) {
+				//查看返回的数据data
+//				$("#fenxi").hide();
+//				$("#example2_wrapper").show();
+//				$("#example2").show();
+				var datas = data.data.reverse();
+				//console.log(datas);
+				var a = [];
+				for(var i = 0; i < datas.length; i++) {
+					var tem = datas[i].data.split(',')[0] + '℃';
+			        var sync = datas[i].syncTime;
+			        a[i] = {
+			            'num': i+1,
+			            'name': devname,
+			            'id': devid,
+			            'tem': tem,
+			            'deviceTime': sync
+			        }
+				}
+				$('#example2').DataTable({
+					"paging": true, //是否显示分页,默认为true
+					"lengthChange": false, //是否显示数据显示条数,默认为true,当数据小于每页的条数时也不显示
+					"searching": false, //是否显示搜索,默认为true
+					"ordering": false, //是否显示列的排序，默认为true
+					"info": true, //是否显示表的信息，默认为true
+					"autoWidth": true, //是否启动计算列宽
+//									"scrollX": true,
+	//	      "scrollCollapse": true,
+		      //"scrollXInner": "100%",
+					//"retrieve":true,
+					"destroy": true,
+					"language": {
+						lengthMenu: '<select class="form-control input-xsmall">' + '<option value="1">1</option>' + '<option value="10">10</option>' + '<option value="20">20</option>' + '<option value="30">30</option>' + '<option value="40">40</option>' + '<option value="50">50</option>' + '</select>条记录', //左上角的分页大小显示。
+						search: '<span class="label label-success">搜索：</span>', //右上角的搜索文本，可以写html标签
+
+						paginate: { //分页的样式内容。
+							previous: "上一页",
+							next: "下一页",
+							first: "第一页",
+							last: "最后"
+						},
+
+						zeroRecords: "没有内容", //table tbody内容为空时，tbody的内容。
+						//下面三者构成了总体的左下角的内容。
+						info: "总共_PAGES_ 页_TOTAL_ 条，显示第_START_ 到第 _END_ ", //，筛选之后得到 _TOTAL_ 条，初始_MAX_ 条 ,左下角的信息显示，大写的词为关键字。
+						infoEmpty: "0条记录", //筛选为空时左下角的显示。
+						infoFiltered: "" //筛选之后的左下角筛选提示，
+					},
+					"data": a,
+					"columns": [
+						{"data": "num"},
+				    	{"data": "name"},
+				    	{"data": "id"},
+				    	{"data": "tem"},
+				    	{"data": "deviceTime"}
+					]
+				});
+				//$.fn.dataTable().fnReloadAjax();
+
+			} else {
+//				$("#fenxi").show();
+//				$("#example2_wrapper").hide();
+//				$("#example2").hide();
+				alert('该设备没有数据。');
+			}
+		},
+		error: function(err) {
+			alert('系统连接错误，请重试！');
+		}
+	});
+}
+
+//报警列表
+function alarmlist(devid, startdate, enddate, devname,type) {
+	$.ajax({
+		//要用post方式
+		type: "post",
+		//方法所在页面和方法名
+		url:'http://123.57.162.77:8083/WlcsInterface/ queryPoliceById?params={%22id%22:'+ devid +',%22type%22:'+ type +',%22startTime%22:%22'+ startdate +'%22,%22endTime%22:%22'+ enddate +'%22}',
+		dataType: "jsonp",
+		jsonp: "jsonpCallback",
+		success: function(data) {
+			console.log(data);
+			if(data.data) {
+				$("#fenxi1").hide();
+				$("#example3_wrapper").show();
+				$("#example3").show();
+				//查看返回的数据data
+
+				var datas = data.data.reverse();
+				//console.log(datas);
+				var a = [];
+				for(var i = 0; i < datas.length; i++) {
+					
+			        a[i] = {
+			            'num': i+1,
+			            'name': datas[i].devidName,
+			            'id': datas[i].deviceId,
+			            'settem': datas[i].setValue,
+			            'alarmtem': datas[i].errorValue,
+			            'alarmtime': datas[i].errorTime,
+			            'recoverytime': datas[i].recoveryTime,
+			            'alarminfo': datas[i].errorData
+			        }
+				}
+				$('#example3').DataTable({
+					"paging": true, //是否显示分页,默认为true
+					"lengthChange": false, //是否显示数据显示条数,默认为true,当数据小于每页的条数时也不显示
+					"searching": false, //是否显示搜索,默认为true
+					"ordering": false, //是否显示列的排序，默认为true
+					"info": true, //是否显示表的信息，默认为true
+					"autoWidth": true, //是否启动计算列宽
+					"scrollX": true,
+					//"retrieve":true,
+					"destroy": true,
+					"language": {
+						lengthMenu: '<select class="form-control input-xsmall">' + '<option value="1">1</option>' + '<option value="10">10</option>' + '<option value="20">20</option>' + '<option value="30">30</option>' + '<option value="40">40</option>' + '<option value="50">50</option>' + '</select>条记录', //左上角的分页大小显示。
+						search: '<span class="label label-success">搜索：</span>', //右上角的搜索文本，可以写html标签
+
+						paginate: { //分页的样式内容。
+							previous: "上一页",
+							next: "下一页",
+							first: "第一页",
+							last: "最后"
+						},
+
+						zeroRecords: "没有内容", //table tbody内容为空时，tbody的内容。
+						//下面三者构成了总体的左下角的内容。
+						info: "总共_PAGES_ 页_TOTAL_ 条，显示第_START_ 到第 _END_ ", //，筛选之后得到 _TOTAL_ 条，初始_MAX_ 条 ,左下角的信息显示，大写的词为关键字。
+						infoEmpty: "0条记录", //筛选为空时左下角的显示。
+						infoFiltered: "" //筛选之后的左下角筛选提示，
+					},
+					"data": a,
+					"columns": [
+						{"data": "num"},
+				    	{"data": "name"},
+				    	{"data": "id"},
+				    	{"data": "settem"},
+				    	{"data": "alarmtem"},
+				    	{"data": "alarmtime"},
+				    	{"data": "recoverytime"},
+				    	{"data": "alarminfo"}
+					]
+				});
+				//$.fn.dataTable().fnReloadAjax();
+
+			} else {
+				$("#fenxi1").show();
+				$("#example3_wrapper").hide();
+				$("#example3").hide();
+			}
+		},
+		error: function(err) {
+			console.log('系统连接错误，请重试！');
+		}
+	});
+}
+
+//格式化时间
+function formatDateTime(theDate) {
+	var _hour = theDate.getHours();
+	var _minute = theDate.getMinutes();
+	var _second = theDate.getSeconds();
+	var _year = theDate.getFullYear()
+	var _month = theDate.getMonth();
+	var _date = theDate.getDate();
+	if(_hour < 10) {
+		_hour = "0" + _hour;
+	}
+	if(_minute < 10) {
+		_minute = "0" + _minute;
+	}
+	if(_second < 10) {
+		_second = "0" + _second;
+	}
+	_month = _month +1;
+	if(_month < 10) {
+		_month = "0" + _month;
+	}
+	if(_date < 10) {
+		_date = "0" + _date;
+	}
+	return _year + "-" + _month + "-" + _date + " " + _hour + ":" + _minute + ":" + _second;
+}
+
+//tab切换
+$(".ele-count button").click(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+		$(".tabs-content .tabs").hide();
+		$(".tabs-content .tabs").eq($(".ele-count button").index(this)).show().siblings().hide();	
+})
+$(".build").click(function(e){
+//	var xx=e.pageX;
+//	var yy=e.pageY;
+//	console.log(xx,yy);
+	$(".con ul").empty();
+	var idlist = $(this).attr("ids");
+	devlist(idlist);
+})
+function devlist(idlist){
+	$.ajax({
+		//要用post方式
+		type: "post",
+		//方法所在页面和方法名
+		url: 'http://123.56.156.91:8089/getBzRecordList?params={%22deviceIds%22:%22' + idlist + '%22}',
+		dataType: "jsonp",
+		jsonp: "jsonpCallback",
+		success: function (data) {
+			//console.log(data);
+	    if(data.data) {
+		    var datas = data.data;
+		    console.log(datas);
+		    var a = [];
+		    for (var i = 0; i < datas.length; i++) {
+		        var tem = datas[i].bzRecord.data.split(',')[0] + '℃';
+		        var devname = datas[i].deviceInfo.deviceName;
+		        var id = datas[i].bzRecord.devId;
+		        var sync = datas[i].bzRecord.syncTime;
+		        var str = '<li>' + devname + '：' + tem + '</li>';
+		        $(".con ul").append(str);
+		    }
+		  }
+	    else{
+		    alert('数据错误！');
+		  }
+		},
+		error: function (err) {
+		    //alert(err);
+		}
+	});	
+}
+</script>
+</body>
+</html>
